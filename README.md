@@ -10,7 +10,6 @@ A Node.js + Express application with user authentication (JWT), blog CRUD, likes
 - ✅ Blog Creation, Editing, Deletion
 - ✅ Like Feature for Posts
 - ✅ Protected Routes using Middleware
-- ✅ Flash Messages
 - ✅ Rate Limiting on Login
 - ✅ Secure Cookies & CSRF Protection
 - ✅ MongoDB & Mongoose Integration
@@ -21,16 +20,16 @@ A Node.js + Express application with user authentication (JWT), blog CRUD, likes
 ## 📸 Screenshots
 
 ### 🧑‍💻 Login Page
-![Login Page](./ScreenShot/login.png)
+![Login Page](https://raw.githubusercontent.com/Arun4990/Blogify-A-Simple-Blogging-Platform/refs/heads/main/ScreenShot/login.PNG)
 
 ### 📝 Register Page
-![Register Page](./ScreenShot/register.png)
+![Register Page](https://raw.githubusercontent.com/Arun4990/Blogify-A-Simple-Blogging-Platform/refs/heads/main/ScreenShot/register.PNG)
 
 ### 🏠 Home Page
-![Home Page](./ScreenShot/home.png)
+![Home Page](https://raw.githubusercontent.com/Arun4990/Blogify-A-Simple-Blogging-Platform/refs/heads/main/ScreenShot/home.PNG)
 
 ### 👤 Profile / Dashboard
-![Profile](./ScreenShot/dashboard.png)
+![Profile](https://raw.githubusercontent.com/Arun4990/Blogify-A-Simple-Blogging-Platform/refs/heads/main/ScreenShot/dashboard.PNG)
 
 ---
 
@@ -83,7 +82,6 @@ Create a .env file (see .env.example for reference):
 6. Bcrypt
 7. Helmet
 8. Express-Session
-9. Connect-Flash
 
 ### 👨‍💻 Author - Arun
 
