@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Edit Blog Post</title>
+    <link rel="stylesheet" href="../public/edit.css" />
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav class="main">
+        <a href="/profile">Back to Profile</a>
+        <a href="/logout">Logout</a>
+    </nav>
+
+    <!-- Edit Form -->
+    <section class="blog-content">
+        <h2>Edit Blog Post</h2>
+        <form action="/update-post/<%=finddata._id  %>" method="POST">
+            <!-- Hidden post ID (used by server to identify post) -->
+            <input type="hidden" name="postId" value="12345" />
+
+            <input type="text" name="title" placeholder="Title" value="<%=finddata.title %>" required />
+
+            <textarea name="content" placeholder="Edit your content..." rows="8"  required >
+<%=finddata.content%>
+            </textarea>
+
+            <button type="submit">Update Post</button>
+        </form>
+    </section>
+
+</body>
+</html>

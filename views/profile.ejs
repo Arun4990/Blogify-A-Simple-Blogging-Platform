@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>User Profile</title>
+    <link rel="stylesheet" href="../public/profile.css" />
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav class="main">
+        <a href="/">Home</a>
+        <a href="/profile">Profile</a>
+        <a href="/logout">LogOut</a>
+    </nav>
+    <h1>Hello! <%=user.username%></h1>
+    <!-- Create Blog Form -->
+    <section class="blog-content">
+        <h2>Create a New Blog Post</h2>
+        <form action="/create-post" method="POST" enctype="multipart/form-data">
+            <input type="text" name="title" placeholder="Title" required />
+            <textarea name="content" placeholder="Write your blog here..." rows="6" required></textarea>
+            <button type="submit">Post</button>
+        </form>
+    </section>
+    <!-- Display All Blog Posts by This User -->
+    <section class="blog-content">
+        <h2>Your Blog Posts <%=findcontent.length%></h2>
+
+        <!-- Blog Post #1 -->
+         <% findcontent.forEach(element => {%>
+            <div class="blog-post">
+            <h3 class="username"><%=user.username%></h3>
+            <h4><%=element.title%></h4>
+            <p>
+                <%=element.content%>
+            </p>
+            <div class="post-actions">
+                <button><a href="/edits/<%=element._id%>">Edit</a></button>
+                <button><a href="/profile/<%=element._id%>">Delete</a></button>
+                <p>Like <%=element.like.length%></p>
+            </div>
+        </div>
+
+         <%});%>
+        
+        </div>
+
+        <!-- More posts can go here -->
+    </section>
+
+</body>
+</html>

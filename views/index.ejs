@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Blog</title>
+    <link rel="stylesheet" href="../public/style.css" type="text/css" />
+</head>
+
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="main">
+        <% if(user !=undefined){%>
+            <a href="/">Home</a>
+            <a href="/profile">Profile</a>
+            <a href="/logout">LogOut</a>
+            <%}%>
+                <%if(user==undefined){%>
+                    <a href="/register">Register</a>
+                    <a href="/login">Login</a>
+                    <%}%>
+
+    </nav>
+    <main>
+        <div>
+            <h1>Blog</h1>
+        </div>
+        <div class="box">
+            <% finddata.reverse().forEach(element=> { %>
+
+                <section class="blog-content">
+                    <h3>
+                        <%=element.title.slice(0,20)%>
+                    </h3>
+                    <p>
+                        <%= element.content.slice(0,60) %>
+                            <p class="showPopup" data-title="<%= element.title %>" data-content="<%= element.content %>">Read More</p>
+
+
+                    </p>
+                    <p><strong>Author:</strong> <a href="#">Evil</a></p>
+                    <% if(user !=undefined){%>
+                        <form action="/like/<%=element._id%>" method="post">
+                            <button type="submit">Like <span>
+                                    <%=element.like.length%>
+                                </span></button>
+                        </form>
+
+
+                        </button>
+
+                        <%}%>
+                            <%if(user==undefined){%>
+
+                                <p><strong>Likes:</strong>
+                                    <%= element.like.length%>
+                                </p>
+                                <%}%>
+
+                </section>
+
+                <%});%>
+                    <div class="overlay" id="overlay">
+                        <div class="popup">
+                            <button class="close-btn" id="closeBtn">&times;</button>
+                            <h2 id="popupTitle"></h2>
+                            <p id="popupContent"></p>
+                        </div>
+                    </div>
+
+        </div>
+
+    </main>
+    <!-- Blog Content -->
+
+
+
+
+</body>
+<script src="../public/Script.js"></script>
+
+</html>
